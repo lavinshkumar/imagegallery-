@@ -1,0 +1,80 @@
+/* Reset and base styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #f0a6f7, #f4faa0 );
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+header {
+  padding: 2rem;
+  background: linear-gradient(90deg, #ff9dd8, #8a86fc,#f1ab83, #d0faa1);
+  color: rgb(12, 12, 12);
+  text-align: center;
+  animation: slideDown 1s ease-out;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  animation: fadeIn 1.5s ease-in;
+}
+
+.image-container {
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  border-radius: 15px;
+}
+
+.image-container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 25px rgba(0,0,0,0.3);
+}
+
+.image-container:hover img {
+  transform: scale(1.1);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #fff;
+  color: #555;
+  margin-top: auto;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
